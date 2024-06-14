@@ -1,7 +1,3 @@
-# Guess-Random-Number
+**README**
 
-In this game you have to enter a number between 1 to 100.
-
-And guess your number is greater than, equal to or less than system generated number.              
-
-If your guess is right you will be awarded +10 Points and on worng guess -8 Points.
+This Python script implements a number guessing game. Players input a number and guess if it's greater, equal to, or less than a randomly generated number. Correct guesses earn 10 points, incorrect ones deduct 8. To quit, the game type "quit", "leave" or "end" Enjoy!
