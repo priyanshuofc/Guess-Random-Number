@@ -15,12 +15,15 @@ print("""Welcome to Trivitz.com!
       If your guess is right you will be awarded +10 Points and on worng guess
       -8 Points
       
-      To exit the game write quit, leave or end""")
+      To exit the game write quit, leave or end
+      
+      """)
 
 playGame = input("are you want to play game: [y] or [n]: ").lower()
 
 if playGame == "y":
     while(True):
+        
         user = input("Your guess: ").lower().strip() 
         
         if user in ["quit", "leave", "end"]:
@@ -31,34 +34,23 @@ if playGame == "y":
             yourGuess = input("Guess number is greater than, equal to or less than system generated number - [g for greater], [e for equal] [l for less]: ").lower()
             userN = int(user)
             randomNum = randomNumber()
-            if yourGuess == "g":
-                if userN > randomNum:
-                    print("You Win")
-                    print(f"your number is {userN} and system generated number is {randomNum}")
-                    point = point + 10
-                else:
-                    print("You Lose")
-                    print(f"your number is {userN} and computer generated number is {randomNum}")
-                    point = point - 8
             
-            if yourGuess == "l":
-                if userN < randomNum:
-                    print("You Win")
-                    print(f"your number is {userN} and computer generated number is {randomNum}")
-                    point = point + 10
-                else:
-                    print("You Lose")
-                    print(f"your number is {userN} and computer generated number is {randomNum}")
-                    point = point - 8
-            if yourGuess == "e":
-                if userN == randomNum:
-                    print("You Win")
-                    print(f"your number is {userN} and computer generated number is {randomNum}")
-                    point = point + 10
-                else:
-                    print("You Lose")
-                    print(f"your number is {userN} and computer generated number is {randomNum}")
-                    point = point - 8
-            
+            if yourGuess == "g" and userN > randomNum:
+                print("You Win")
+                print(f"your number is {userN} and computer generated number is {randomNum}")
+                point = point + 10             
+            elif yourGuess == "l" and userN < randomNum:
+                print("You Win")
+                print(f"your number is {userN} and computer generated number is {randomNum}")
+                point = point + 10
+            elif yourGuess == "e" and userN == randomNum:
+                print("You Win")
+                print(f"your number is {userN} and computer generated number is {randomNum}")
+                point = point + 10
+            else:
+                print("You Lose")
+                print(f"your number is {userN} and computer generated number is {randomNum}")
+                point = point - 8
+                
         except ValueError:
             print("Enter the correct input")                
